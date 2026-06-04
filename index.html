@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohammed Ashique Ali – AI/ML Engineer & Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0b1d35;
+    --navy-mid: #132a4a;
+    --blue: #1a5ea8;
+    --blue-bright: #2979e0;
+    --sky: #4fa8e8;
+    --gold: #e8a020;
+    --gold-light: #f5c55a;
+    --off-white: #f5f2ec;
+    --text: #1a1a2e;
+    --muted: #5a607a;
+    --card-bg: #ffffff;
+    --border: rgba(26,94,168,0.12);
+    --tag-bg: #e8f0fc;
+    --tag-text: #1a5ea8;
+    --section-bg: #f8faff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--off-white);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,29,53,0.97);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 4rem;
+    height: 60px;
+    border-bottom: 1px solid rgba(79,168,232,0.15);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sky); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 4rem 60px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(79,168,232,0.12);
+    border: 1px solid rgba(79,168,232,0.3);
+    color: var(--sky);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .hero-name span { color: var(--gold-light); }
+  .hero-headline {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.62);
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+    max-width: 520px;
+    line-height: 1.65;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--blue-bright);
+    color: white;
+    padding: 11px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #3088f5; transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--sky); color: var(--sky); }
+
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(79,168,232,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .hero-card-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 1.25rem;
+  }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    color: var(--gold-light);
+    display: block;
+  }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; }
+  .hero-skills { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero-skill-tag {
+    background: rgba(41,121,224,0.15);
+    border: 1px solid rgba(41,121,224,0.25);
+    color: var(--sky);
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  /* ── SECTIONS SHARED ── */
+  section { padding: 80px 4rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--navy);
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: white; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 300; }
+  .about-text p strong { color: var(--navy); font-weight: 500; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+  .highlight-card {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+  }
+  .highlight-card h4 { font-size: 0.9rem; color: var(--navy); font-weight: 500; margin-bottom: 3px; }
+  .highlight-card p { font-size: 0.83rem; color: var(--muted); margin: 0; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--section-bg); }
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 10px; top: 6px; bottom: 6px;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--blue-bright), transparent);
+  }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; }
+  .timeline-dot {
+    position: absolute; left: -2.5rem; top: 6px;
+    width: 14px; height: 14px;
+    background: var(--blue-bright);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(41,121,224,0.2);
+  }
+  .timeline-dot.current { background: var(--gold); box-shadow: 0 0 0 3px rgba(232,160,32,0.25); }
+  .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .timeline-role { font-size: 1rem; font-weight: 500; color: var(--navy); }
+  .timeline-company { font-size: 0.85rem; color: var(--blue); font-weight: 500; }
+  .timeline-date {
+    font-size: 0.78rem;
+    color: white;
+    background: var(--navy-mid);
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .timeline-date.active { background: var(--gold); color: var(--navy); font-weight: 500; }
+  .timeline-bullets { list-style: none; margin-top: 0.6rem; }
+  .timeline-bullets li {
+    font-size: 0.86rem;
+    color: var(--muted);
+    padding: 3px 0 3px 1rem;
+    position: relative;
+    font-weight: 300;
+  }
+  .timeline-bullets li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--blue);
+    font-size: 0.75rem;
+    top: 5px;
+  }
+  .tech-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.75rem; }
+  .chip {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.72rem;
+    padding: 2px 9px;
+    border-radius: 100px;
+    font-weight: 400;
+    border: 1px solid rgba(26,94,168,0.12);
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: white; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue-bright);
+  }
+  .project-card.featured::before { background: var(--gold); }
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,53,0.1); }
+  .project-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+  .badge-aviation { background: #fff3e0; color: #b45309; }
+  .badge-ml { background: #ede9fe; color: #5b21b6; }
+  .badge-fullstack { background: #ecfdf5; color: #065f46; }
+  .badge-robotics { background: #fce7f3; color: #831843; }
+  .project-title { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.35; }
+  .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; font-weight: 300; margin-bottom: 1rem; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--section-bg); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+  .skill-group {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .skill-group-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .skill-group-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--blue-bright);
+    border-radius: 50%;
+  }
+  .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    background: var(--section-bg);
+    color: var(--navy);
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  /* ── EDUCATION & CERTS ── */
+  #education { background: white; }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .edu-card {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+  .edu-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 0.3rem; }
+  .edu-card .inst { font-size: 0.85rem; color: var(--blue); font-weight: 500; margin-bottom: 0.25rem; }
+  .edu-card .year { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; }
+  .edu-card .cgpa {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-size: 0.82rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .cert-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .cert-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+  }
+  .cert-icon {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .cert-name { font-size: 0.88rem; color: var(--navy); font-weight: 500; }
+  .cert-org { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    text-align: center;
+  }
+  #contact .section-title { color: white; }
+  #contact .section-label { color: var(--sky); }
+  .contact-subtitle { color: rgba(255,255,255,0.55); font-weight: 300; margin-bottom: 2.5rem; font-size: 0.95rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .contact-link:hover { background: rgba(255,255,255,0.13); border-color: var(--sky); color: var(--sky); }
+  .contact-link svg { width: 16px; height: 16px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060f1a;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 60px 1.5rem; }
+    #hero { padding: 80px 1.5rem 60px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Ashique Ali</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-tag">Open to Opportunities</div>
+      <h1 class="hero-name">Mohammed<br /><span>Ashique Ali</span></h1>
+      <p class="hero-headline">AI/ML Engineer & Data Scientist building intelligent systems at the intersection of machine learning, full-stack development, and aviation technology.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">At a Glance</div>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Internships</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">7.5</span>
+          <span class="stat-label">CGPA / 10</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2026</span>
+          <span class="stat-label">Graduate</span>
+        </div>
+      </div>
+      <div class="hero-skills">
+        <span class="hero-skill-tag">Python</span>
+        <span class="hero-skill-tag">Machine Learning</span>
+        <span class="hero-skill-tag">Flask</span>
+        <span class="hero-skill-tag">Aviation Tech</span>
+        <span class="hero-skill-tag">LLMs</span>
+        <span class="hero-skill-tag">AWS</span>
+        <span class="hero-skill-tag">WebSockets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Building at the frontier of AI & aviation</h2>
+        <p>I'm an <strong>AI & Data Science graduate</strong> from B. S. Abdur Rahman Crescent Institute of Science and Technology, Chennai, currently working as an <strong>AI/ML Intern at SPI Aviation</strong> — contributing to enterprise aviation software, chatbot architectures, and real-time communication systems.</p>
+        <p>My work spans end-to-end machine learning pipelines, intelligent data-driven web applications, computer vision with OCR, and full-stack Python development. I'm passionate about applying AI to solve real operational challenges in aviation and beyond.</p>
+        <p>I thrive in cross-functional environments and enjoy bridging the gap between data science and software engineering to deliver impactful solutions.</p>
+      </div>
+      <div class="about-highlights reveal" style="transition-delay:0.15s">
+        <div class="highlight-card">
+          <h4>🛩️ Aviation Technology</h4>
+          <p>Working on Evercore — an enterprise MRO platform — at SPI Aviation, contributing to chatbot integration, WebSocket architecture, and maintenance module enhancements.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>🤖 Machine Learning & AI</h4>
+          <p>Built models for credit scoring, churn prediction, and customer segmentation. Hands-on with scikit-learn, Pandas, feature engineering, and model evaluation pipelines.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>🌐 Full-Stack Development</h4>
+          <p>Built SkySync — a full-stack aviation platform with Flask, Streamlit, SQL, and interactive dashboards — from concept to deployment on AWS.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>👁️ Computer Vision & OCR</h4>
+          <p>Automated P&ID equipment tag extraction from engineering drawings using OpenCV, Tesseract OCR, and industrial regex pattern rules.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">AI/ML Intern</div>
+            <div class="timeline-company">SPI Aviation Pvt. Ltd.</div>
+          </div>
+          <span class="timeline-date active">2026 – Present</span>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Contributing to the development and enhancement of Evercore — an enterprise aviation maintenance and engineering platform.</li>
+          <li>Worked on chatbot integration, workflow automation, and intelligent support system improvements.</li>
+          <li>Proposed and designed WebSocket-based real-time communication architecture for chatbot interactions.</li>
+          <li>Participated in requirement analysis, testing, documentation, and implementation of enterprise aviation solutions.</li>
+          <li>Collaborated with cross-functional teams to enhance platform scalability and performance.</li>
+        </ul>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">WebSockets</span>
+          <span class="chip">JavaScript</span><span class="chip">REST APIs</span><span class="chip">SQL</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Machine Learning Intern</div>
+            <div class="timeline-company">CodeAlpha</div>
+          </div>
+          <span class="timeline-date">Jul 2025</span>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Developed ML models for credit scoring and customer churn prediction using real-world datasets.</li>
+          <li>Performed data cleaning, EDA, and feature engineering to improve model performance and interpretability.</li>
+        </ul>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+          <span class="chip">scikit-learn</span><span class="chip">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Data Science Intern (Virtual)</div>
+            <div class="timeline-company">British Airways – Forage</div>
+          </div>
+          <span class="timeline-date">Jun 2025</span>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Modeled lounge eligibility (Heathrow Terminal 3) using customer journey datasets.</li>
+          <li>Built segmentation and predictive workflows to identify key customer patterns.</li>
+          <li>Presented insights and recommendations to support customer access optimization.</li>
+        </ul>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Excel</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Data Analytics Intern (Virtual)</div>
+            <div class="timeline-company">Deloitte – Forage</div>
+          </div>
+          <span class="timeline-date">Jun 2025</span>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Analyzed factory telemetry data to identify breakdown-prone machines and high-risk locations.</li>
+          <li>Cleaned, merged, and validated datasets to generate reliable operational insights and summary reports.</li>
+        </ul>
+        <div class="tech-chips">
+          <span class="chip">Excel</span><span class="chip">Python</span><span class="chip">Pandas</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Key Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card featured reveal">
+        <span class="project-badge badge-aviation">Aviation Tech</span>
+        <div class="project-title">Evercore – Aviation Maintenance Management Platform</div>
+        <p class="project-desc">Contributed to an enterprise MRO platform for aircraft engineering and maintenance. Worked on chatbot architecture, WebSocket real-time communication design, LLP tracking, engine management, and discrepancy management modules.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">WebSockets</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="project-card featured reveal" style="transition-delay:0.1s">
+        <span class="project-badge badge-aviation">Full-Stack · Aviation</span>
+        <div class="project-title">SkySync – Flight Optimization & Financial Tracking</div>
+        <p class="project-desc">Aviation-focused platform for flight scheduling, operational planning, and financial management. Implemented user authentication, analytics dashboards, expense tracking, and database-driven architecture.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Streamlit</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.15s">
+        <span class="project-badge badge-ml">Machine Learning</span>
+        <div class="project-title">Customer Churn Prediction</div>
+        <p class="project-desc">End-to-end churn prediction pipeline with EDA, feature engineering, and classification model comparison. Evaluated using Accuracy, F1-score, and ROC-AUC metrics to identify at-risk customers.</p>
+        <div class="tech-chips">
+          <span class="chip">scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Seaborn</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.2s">
+        <span class="project-badge badge-fullstack">Computer Vision · OCR</span>
+        <div class="project-title">P&ID Equipment Tag Extraction Tool</div>
+        <p class="project-desc">Automated extraction of equipment tags from scanned P&ID engineering PDFs using image preprocessing, OCR, and industrial-standard regex pattern filtering for improved accuracy.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Tesseract OCR</span><span class="chip">Regex</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.25s">
+        <span class="project-badge badge-robotics">Robotics · IoT</span>
+        <div class="project-title">Autonomous Robotics & IoT System</div>
+        <p class="project-desc">Developed robotics solutions integrating sensors and microcontrollers with real-time monitoring. Implemented obstacle detection, automated decision-making, and data analytics for operational monitoring.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Arduino/ESP32</span><span class="chip">IoT</span><span class="chip">Embedded Systems</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Programming</div>
+        <div class="skill-list">
+          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Machine Learning & AI</div>
+        <div class="skill-list">
+          <span class="skill-tag">scikit-learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Generative AI</span><span class="skill-tag">LLM Applications</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Web & APIs</div>
+        <div class="skill-list">
+          <span class="skill-tag">Flask</span><span class="skill-tag">Streamlit</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">jQuery</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Databases</div>
+        <div class="skill-list">
+          <span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Computer Vision & OCR</div>
+        <div class="skill-list">
+          <span class="skill-tag">OpenCV</span><span class="skill-tag">Tesseract OCR</span><span class="skill-tag">Image Processing</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Cloud & Tools</div>
+        <div class="skill-list">
+          <span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Tableau</span><span class="skill-tag">Matplotlib</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education & Certifications</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <h3>B.Tech – Artificial Intelligence & Data Science</h3>
+        <div class="inst">B. S. Abdur Rahman Crescent Institute of Science and Technology</div>
+        <div class="year">Chennai, Tamil Nadu &nbsp;·&nbsp; 2022 – 2026</div>
+        <span class="cgpa">CGPA: 7.5 / 10</span>
+      </div>
+      <div class="reveal" style="transition-delay:0.1s">
+        <ul class="cert-list">
+          <li class="cert-item">
+            <div class="cert-icon">DE</div>
+            <div>
+              <div class="cert-name">Data Analytics Virtual Experience</div>
+              <div class="cert-org">Deloitte – Forage</div>
+            </div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-icon">BA</div>
+            <div>
+              <div class="cert-name">Data Science Virtual Experience</div>
+              <div class="cert-org">British Airways – Forage</div>
+            </div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-icon">CA</div>
+            <div>
+              <div class="cert-name">Machine Learning Internship</div>
+              <div class="cert-org">CodeAlpha</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title" style="color:white; margin-bottom:0.75rem;">Get in Touch</h2>
+    <p class="contact-subtitle">Open to AI/ML, data science, full-stack Python, and aviation technology roles. Let's build something great together.</p>
+    <div class="contact-links">
+      <a href="mailto:ashiqueali90030@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" rx="2"/><path d="m4 8 8 5 8-5"/></svg>
+        ashiqueali90030@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/mohammed-ashique-ali-a-029bb2271/" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Ashique-Ali18" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="tel:+917338886515" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.34h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        +91 73388 86515
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Mohammed Ashique Ali &nbsp;·&nbsp; AI/ML Engineer & Data Scientist &nbsp;·&nbsp; Chennai, Tamil Nadu
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
