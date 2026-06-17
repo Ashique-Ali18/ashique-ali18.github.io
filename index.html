@@ -76,7 +76,7 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 390px;
     gap: 4rem;
     max-width: 1100px;
     width: 100%;
@@ -195,6 +195,39 @@
     line-height: 1.2;
   }
 
+  /* ── PUBLICATION BANNER ── */
+  #publication { background: var(--navy-mid); padding: 40px 4rem; }
+  .pub-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+  }
+  .pub-badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pub-content { flex: 1; min-width: 260px; }
+  .pub-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    line-height: 1.35;
+  }
+  .pub-meta { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .pub-meta strong { color: var(--sky); }
+  .pub-stats { display: flex; gap: 1.5rem; flex-shrink: 0; }
+  .pub-stat { text-align: center; }
+  .pub-stat-num { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--gold-light); display: block; }
+  .pub-stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
+
   /* ── ABOUT ── */
   #about { background: white; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
@@ -270,7 +303,7 @@
 
   /* ── PROJECTS ── */
   #projects { background: white; }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
   .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -287,6 +320,7 @@
     background: var(--blue-bright);
   }
   .project-card.featured::before { background: var(--gold); }
+  .project-card.pub-card::before { background: linear-gradient(90deg, var(--gold), var(--sky)); }
   .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(11,29,53,0.1); }
   .project-badge {
     display: inline-block;
@@ -300,10 +334,26 @@
   }
   .badge-aviation { background: #fff3e0; color: #b45309; }
   .badge-ml { background: #ede9fe; color: #5b21b6; }
+  .badge-security { background: #fef2f2; color: #991b1b; }
+  .badge-mobile { background: #ecfdf5; color: #065f46; }
+  .badge-graph { background: #eff6ff; color: #1d4ed8; }
   .badge-fullstack { background: #ecfdf5; color: #065f46; }
   .badge-robotics { background: #fce7f3; color: #831843; }
+  .badge-cv { background: #f0fdf4; color: #166534; }
+  .badge-pub { background: #fefce8; color: #854d0e; }
   .project-title { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.35; }
   .project-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; font-weight: 300; margin-bottom: 1rem; }
+  .project-metric {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(232,160,32,0.1);
+    border: 1px solid rgba(232,160,32,0.25);
+    color: #92620a;
+    font-size: 0.74rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
 
   /* ── SKILLS ── */
   #skills { background: var(--section-bg); }
@@ -379,12 +429,36 @@
     font-size: 0.75rem;
     font-weight: 600;
   }
+  .cert-icon.gold { background: var(--gold); color: var(--navy); }
   .cert-name { font-size: 0.88rem; color: var(--navy); font-weight: 500; }
   .cert-org { font-size: 0.78rem; color: var(--muted); }
 
+  /* ── ACHIEVEMENTS ── */
+  #achievements { background: var(--navy); padding: 60px 4rem; }
+  .achievements-inner { max-width: 1100px; margin: 0 auto; }
+  .achievements-inner .section-label { color: var(--sky); }
+  .achievements-inner .section-title { color: white; margin-bottom: 2rem; }
+  .achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .achieve-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(79,168,232,0.15);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .achieve-icon {
+    width: 38px; height: 38px; flex-shrink: 0;
+    background: rgba(232,160,32,0.15);
+    border: 1px solid rgba(232,160,32,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .achieve-title { font-size: 0.9rem; font-weight: 500; color: white; margin-bottom: 2px; }
+  .achieve-sub { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
   /* ── CONTACT ── */
   #contact {
-    background: var(--navy);
+    background: var(--navy-mid);
     text-align: center;
   }
   #contact .section-title { color: white; }
@@ -424,10 +498,14 @@
     .nav-links { display: none; }
     section { padding: 60px 1.5rem; }
     #hero { padding: 80px 1.5rem 60px; }
+    #publication { padding: 32px 1.5rem; }
+    #achievements { padding: 60px 1.5rem; }
     .hero-grid { grid-template-columns: 1fr; }
     .hero-card { display: none; }
     .about-grid { grid-template-columns: 1fr; }
     .edu-grid { grid-template-columns: 1fr; }
+    .pub-inner { flex-direction: column; gap: 1.25rem; }
+    .pub-stats { justify-content: flex-start; }
   }
 </style>
 </head>
@@ -442,6 +520,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -450,9 +529,9 @@
 <section id="hero">
   <div class="hero-grid">
     <div>
-      <div class="hero-tag">Open to Opportunities</div>
+      <div class="hero-tag">Open to Opportunities · Published Researcher</div>
       <h1 class="hero-name">Mohammed<br /><span>Ashique Ali</span></h1>
-      <p class="hero-headline">AI/ML Engineer & Data Scientist building intelligent systems at the intersection of machine learning, full-stack development, and aviation technology.</p>
+      <p class="hero-headline">AI/ML Engineer & Data Scientist building intelligent systems at the intersection of machine learning, cybersecurity, mobile AI, graph analytics, and full-stack development.</p>
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -462,30 +541,58 @@
       <div class="hero-card-title">At a Glance</div>
       <div class="stat-grid">
         <div class="stat-item">
-          <span class="stat-num">5+</span>
+          <span class="stat-num">8+</span>
           <span class="stat-label">Projects</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">4</span>
+          <span class="stat-num">5</span>
           <span class="stat-label">Internships</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">7.5</span>
-          <span class="stat-label">CGPA / 10</span>
+          <span class="stat-num">1</span>
+          <span class="stat-label">Publication</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">2026</span>
-          <span class="stat-label">Graduate</span>
+          <span class="stat-num">🥇</span>
+          <span class="stat-label">Hackathon Win</span>
         </div>
       </div>
       <div class="hero-skills">
         <span class="hero-skill-tag">Python</span>
-        <span class="hero-skill-tag">Machine Learning</span>
-        <span class="hero-skill-tag">Flask</span>
-        <span class="hero-skill-tag">Aviation Tech</span>
+        <span class="hero-skill-tag">PyTorch</span>
         <span class="hero-skill-tag">LLMs</span>
+        <span class="hero-skill-tag">Flask / Django</span>
+        <span class="hero-skill-tag">Neo4j</span>
+        <span class="hero-skill-tag">Docker · Kafka</span>
         <span class="hero-skill-tag">AWS</span>
-        <span class="hero-skill-tag">WebSockets</span>
+        <span class="hero-skill-tag">ONNX · Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION BANNER -->
+<section id="publication" style="padding:0">
+  <div style="background:var(--navy-mid); padding:40px 4rem;">
+    <div class="pub-inner reveal">
+      <div class="pub-badge">📄 Published Research · IJSREM 2025</div>
+      <div class="pub-content">
+        <div class="pub-title">Network-Based XAI-Driven Transparency Layer for Browser Download Warnings</div>
+        <div class="pub-meta">International Journal of Scientific Research in Engineering and Management &nbsp;·&nbsp; <strong>ISSN 2582-3930</strong> &nbsp;·&nbsp; Volume 09, Issue 06 &nbsp;·&nbsp; June 2025</div>
+      </div>
+      <div class="pub-stats">
+        <div class="pub-stat">
+          <span class="pub-stat-num">95.67%</span>
+          <span class="pub-stat-label">Accuracy</span>
+        </div>
+        <div class="pub-stat">
+          <span class="pub-stat-num">0.9823</span>
+          <span class="pub-stat-label">ROC AUC</span>
+        </div>
+        <div class="pub-stat">
+          <span class="pub-stat-num">5</span>
+          <span class="pub-stat-label">Analysis Layers</span>
+        </div>
       </div>
     </div>
   </div>
@@ -497,27 +604,27 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-label">About Me</div>
-        <h2 class="section-title">Building at the frontier of AI & aviation</h2>
+        <h2 class="section-title">Building at the frontier of AI & beyond</h2>
         <p>I'm an <strong>AI & Data Science graduate</strong> from B. S. Abdur Rahman Crescent Institute of Science and Technology, Chennai, currently working as an <strong>AI/ML Intern at SPI Aviation</strong> — contributing to enterprise aviation software, chatbot architectures, and real-time communication systems.</p>
-        <p>My work spans end-to-end machine learning pipelines, intelligent data-driven web applications, computer vision with OCR, and full-stack Python development. I'm passionate about applying AI to solve real operational challenges in aviation and beyond.</p>
-        <p>I thrive in cross-functional environments and enjoy bridging the gap between data science and software engineering to deliver impactful solutions.</p>
+        <p>My work spans end-to-end ML pipelines, on-device mobile AI, graph-based AML systems, published XAI research, full-stack web development (Python + PHP stacks), and computer vision. I've shipped systems that run in browsers, on Android, inside Docker clusters, and on enterprise aviation platforms.</p>
+        <p>I'm a <strong>National Hackathon winner (1st Place, AI/ML domain)</strong> and a published researcher in cybersecurity and explainable AI. I thrive bridging the gap between research and production systems.</p>
       </div>
       <div class="about-highlights reveal" style="transition-delay:0.15s">
         <div class="highlight-card">
-          <h4>🛩️ Aviation Technology</h4>
-          <p>Working on Evercore — an enterprise MRO platform — at SPI Aviation, contributing to chatbot integration, WebSocket architecture, and maintenance module enhancements.</p>
+          <h4>📄 Published Researcher</h4>
+          <p>Co-authored an XAI-based browser security paper in IJSREM (ISSN 2582-3930) — a pre-download intrusion detection system with 95.67% accuracy, TreeSHAP, and MITRE ATT&CK mapping.</p>
         </div>
         <div class="highlight-card">
-          <h4>🤖 Machine Learning & AI</h4>
-          <p>Built models for credit scoring, churn prediction, and customer segmentation. Hands-on with scikit-learn, Pandas, feature engineering, and model evaluation pipelines.</p>
+          <h4>🤖 AI/ML & Deep Learning</h4>
+          <p>Built systems using PyTorch, YOLOv8, DistilBERT, MedGemma, ONNX Runtime, and scikit-learn — from medical imaging to on-device fraud detection to AML graph intelligence.</p>
         </div>
         <div class="highlight-card">
           <h4>🌐 Full-Stack Development</h4>
-          <p>Built SkySync — a full-stack aviation platform with Flask, Streamlit, SQL, and interactive dashboards — from concept to deployment on AWS.</p>
+          <p>Delivered production web apps with Flask, Django, Streamlit, FastAPI, Bootstrap, jQuery/AJAX, MySQL (Prepared Statements), MongoDB, and Redis — deployed on AWS and Heroku.</p>
         </div>
         <div class="highlight-card">
-          <h4>👁️ Computer Vision & OCR</h4>
-          <p>Automated P&ID equipment tag extraction from engineering drawings using OpenCV, Tesseract OCR, and industrial regex pattern rules.</p>
+          <h4>🛩️ Aviation Technology</h4>
+          <p>Contributing to Evercore MRO platform at SPI Aviation — chatbot integration, WebSocket real-time architecture, LLP tracking, and engine management modules.</p>
         </div>
       </div>
     </div>
@@ -541,15 +648,36 @@
           <span class="timeline-date active">2026 – Present</span>
         </div>
         <ul class="timeline-bullets">
-          <li>Contributing to the development and enhancement of Evercore — an enterprise aviation maintenance and engineering platform.</li>
-          <li>Worked on chatbot integration, workflow automation, and intelligent support system improvements.</li>
-          <li>Proposed and designed WebSocket-based real-time communication architecture for chatbot interactions.</li>
-          <li>Participated in requirement analysis, testing, documentation, and implementation of enterprise aviation solutions.</li>
-          <li>Collaborated with cross-functional teams to enhance platform scalability and performance.</li>
+          <li>Contributing to Evercore — an enterprise aviation maintenance and engineering platform — covering chatbot integration, workflow automation, and intelligent support systems.</li>
+          <li>Proposed and designed WebSocket-based real-time communication architecture for chatbot interactions, enabling instant message delivery and live notifications.</li>
+          <li>Supported maintenance modules: LLP tracking, engine management, discrepancy management, and operational reporting.</li>
         </ul>
         <div class="tech-chips">
           <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">WebSockets</span>
           <span class="chip">JavaScript</span><span class="chip">REST APIs</span><span class="chip">SQL</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Web Development Intern</div>
+            <div class="timeline-company">HCL · GUVI Program</div>
+          </div>
+          <span class="timeline-date">2025</span>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Architected a multi-page web app with strict separation of concerns — HTML, CSS, JS, and PHP each in dedicated files; jQuery exclusively for DOM manipulation and AJAX for all backend calls (no native form submission).</li>
+          <li>Designed all forms with Bootstrap for full responsiveness; stored registration data in MySQL via Prepared Statements only, and user profile details in MongoDB.</li>
+          <li>Maintained login sessions using browser localStorage (no PHP sessions), backed by Redis for server-side session management. All icons/images in SVG format.</li>
+          <li>Built a Django-backend tab-switching UI (WhatsApp/Email/Name-style navigation). Deployed on Heroku/AWS; source on GitHub.</li>
+        </ul>
+        <div class="tech-chips">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span><span class="chip">JavaScript</span>
+          <span class="chip">jQuery / AJAX</span><span class="chip">PHP</span><span class="chip">Django</span>
+          <span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Redis</span>
+          <span class="chip">AWS</span><span class="chip">Heroku</span>
         </div>
       </div>
 
@@ -582,9 +710,7 @@
           <span class="timeline-date">Jun 2025</span>
         </div>
         <ul class="timeline-bullets">
-          <li>Modeled lounge eligibility (Heathrow Terminal 3) using customer journey datasets.</li>
-          <li>Built segmentation and predictive workflows to identify key customer patterns.</li>
-          <li>Presented insights and recommendations to support customer access optimization.</li>
+          <li>Modelled Heathrow Terminal 3 lounge eligibility using customer journey datasets; built segmentation and predictive workflows identifying key customer access patterns.</li>
         </ul>
         <div class="tech-chips">
           <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Excel</span>
@@ -601,8 +727,7 @@
           <span class="timeline-date">Jun 2025</span>
         </div>
         <ul class="timeline-bullets">
-          <li>Analyzed factory telemetry data to identify breakdown-prone machines and high-risk locations.</li>
-          <li>Cleaned, merged, and validated datasets to generate reliable operational insights and summary reports.</li>
+          <li>Analysed factory telemetry data to identify breakdown-prone machines; cleaned and merged datasets to generate actionable operational insight reports.</li>
         </ul>
         <div class="tech-chips">
           <span class="chip">Excel</span><span class="chip">Python</span><span class="chip">Pandas</span>
@@ -620,48 +745,93 @@
     <h2 class="section-title">Key Projects</h2>
     <div class="projects-grid">
 
+      <!-- ExplainMyXray -->
       <div class="project-card featured reveal">
-        <span class="project-badge badge-aviation">Aviation Tech</span>
-        <div class="project-title">Evercore – Aviation Maintenance Management Platform</div>
-        <p class="project-desc">Contributed to an enterprise MRO platform for aircraft engineering and maintenance. Worked on chatbot architecture, WebSocket real-time communication design, LLP tracking, engine management, and discrepancy management modules.</p>
+        <span class="project-badge badge-ml">Medical AI · LLM</span>
+        <div class="project-title">ExplainMyXray – AI Chest X-Ray Diagnostic System</div>
+        <div class="project-metric">84.5% token accuracy · 34,000 PadChest X-rays</div>
+        <p class="project-desc">AI-powered radiology report generator with spatial disease localisation using Google MedGemma-4B. Fine-tuned on 34,000 PadChest X-rays; achieves 84.5% token accuracy and 100% zero-shot spatial generalisation on consumer GPUs. Submitted to Kaggle MedGemma Impact Challenge.</p>
         <div class="tech-chips">
-          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">WebSockets</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">AWS</span>
+          <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">MedGemma-4B</span>
+          <span class="chip">Streamlit</span><span class="chip">FastAPI</span>
         </div>
       </div>
 
-      <div class="project-card featured reveal" style="transition-delay:0.1s">
-        <span class="project-badge badge-aviation">Full-Stack · Aviation</span>
-        <div class="project-title">SkySync – Flight Optimization & Financial Tracking</div>
-        <p class="project-desc">Aviation-focused platform for flight scheduling, operational planning, and financial management. Implemented user authentication, analytics dashboards, expense tracking, and database-driven architecture.</p>
+      <!-- AuraShield -->
+      <div class="project-card featured reveal" style="transition-delay:0.08s">
+        <span class="project-badge badge-mobile">Android · On-Device AI</span>
+        <div class="project-title">AuraShield – On-Device Scam Detection App</div>
+        <div class="project-metric">100% validation accuracy · 64 MB int8 · Zero internet</div>
+        <p class="project-desc">Android app scanning notifications in real time via a fine-tuned DistilBERT classifier (64 MB int8), running entirely on-device with zero internet permissions. Hybrid ML + rule-based engine covering 8 scam categories (UPI fraud, OTP phishing, KYC threats) trained on 400 Indian-context samples.</p>
         <div class="tech-chips">
-          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Streamlit</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">AWS</span>
+          <span class="chip">Android</span><span class="chip">Python</span><span class="chip">ONNX Runtime</span>
+          <span class="chip">DistilBERT</span>
         </div>
       </div>
 
-      <div class="project-card reveal" style="transition-delay:0.15s">
-        <span class="project-badge badge-ml">Machine Learning</span>
-        <div class="project-title">Customer Churn Prediction</div>
-        <p class="project-desc">End-to-end churn prediction pipeline with EDA, feature engineering, and classification model comparison. Evaluated using Accuracy, F1-score, and ROC-AUC metrics to identify at-risk customers.</p>
+      <!-- MuleCatch -->
+      <div class="project-card featured reveal" style="transition-delay:0.12s">
+        <span class="project-badge badge-graph">Graph AI · AML · Fintech</span>
+        <div class="project-title">MuleCatch – Graph Intelligence for Mule Account Detection</div>
+        <div class="project-metric">Sub-60s real-time detection · FIU-IND STR compliant</div>
+        <p class="project-desc">Graph-based AML system for Indian Overseas Bank (IOB CyberNova Hackathon) using Neo4j and a 4-layer detection pipeline — rule engine, smurf-weighting, Louvain community detection, and GNN scoring. Full stack via Docker Compose with Kafka streaming and React investigator dashboard.</p>
         <div class="tech-chips">
-          <span class="chip">scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Seaborn</span>
+          <span class="chip">Python</span><span class="chip">Neo4j</span><span class="chip">FastAPI</span>
+          <span class="chip">Docker</span><span class="chip">Kafka</span><span class="chip">React</span>
         </div>
       </div>
 
+      <!-- XAI Browser Security (Publication) -->
+      <div class="project-card pub-card reveal" style="transition-delay:0.16s">
+        <span class="project-badge badge-security">Cybersecurity · XAI · Published</span>
+        <div class="project-title">XAI Browser Download Intrusion Detection System</div>
+        <div class="project-metric">95.67% accuracy · ROC AUC 0.9823 · IJSREM 2025</div>
+        <p class="project-desc">Pre-download intrusion detection inside a Chrome extension. Random Forest on UNSW-NB15 with TreeSHAP explanations, MITRE ATT&CK mapping, and a five-layer risk fusion engine (ML + URL reputation + static inspection + URLhaus + Shannon entropy). 10-page Streamlit dashboard for SOC analysts.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Chrome Extension</span>
+          <span class="chip">SHAP</span><span class="chip">Streamlit</span><span class="chip">MITRE ATT&CK</span>
+        </div>
+      </div>
+
+      <!-- Evercore -->
       <div class="project-card reveal" style="transition-delay:0.2s">
-        <span class="project-badge badge-fullstack">Computer Vision · OCR</span>
+        <span class="project-badge badge-aviation">Aviation Tech · Enterprise</span>
+        <div class="project-title">Evercore – Aviation Maintenance Management Platform</div>
+        <p class="project-desc">Contributed to an enterprise MRO platform at SPI Aviation — chatbot architecture, WebSocket real-time communication, LLP tracking, engine management, and discrepancy management modules.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">WebSockets</span><span class="chip">SQL</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <!-- SkySync -->
+      <div class="project-card reveal" style="transition-delay:0.24s">
+        <span class="project-badge badge-fullstack">Full-Stack · Aviation</span>
+        <div class="project-title">SkySync – Flight Optimisation & Financial Tracking</div>
+        <p class="project-desc">Aviation-focused platform for flight scheduling, operational planning, and financial management. Analytics dashboards, expense tracking, and database-driven architecture deployed on AWS.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Streamlit</span><span class="chip">SQL</span><span class="chip">AWS</span>
+        </div>
+      </div>
+
+      <!-- YOLOv8 Robotics -->
+      <div class="project-card reveal" style="transition-delay:0.28s">
+        <span class="project-badge badge-robotics">Robotics · Computer Vision</span>
+        <div class="project-title">Autonomous Robotics – Defect Detection System</div>
+        <div class="project-metric">500+ annotated images · 60%+ confidence threshold</div>
+        <p class="project-desc">Annotated 500+ images across multiple defect classes using AnyLabeling; trained a YOLOv8 model for multi-class real-time defect detection on a Linux-based robot platform, significantly reducing human inspection intervention.</p>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">YOLOv8</span><span class="chip">OpenCV</span>
+          <span class="chip">AnyLabeling</span><span class="chip">Linux</span>
+        </div>
+      </div>
+
+      <!-- P&ID -->
+      <div class="project-card reveal" style="transition-delay:0.32s">
+        <span class="project-badge badge-cv">OCR · Automation</span>
         <div class="project-title">P&ID Equipment Tag Extraction Tool</div>
-        <p class="project-desc">Automated extraction of equipment tags from scanned P&ID engineering PDFs using image preprocessing, OCR, and industrial-standard regex pattern filtering for improved accuracy.</p>
+        <p class="project-desc">Automated extraction of equipment tags from scanned P&ID engineering PDFs using image preprocessing, OCR, and industrial-standard regex pattern filtering for improved extraction accuracy.</p>
         <div class="tech-chips">
           <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Tesseract OCR</span><span class="chip">Regex</span>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:0.25s">
-        <span class="project-badge badge-robotics">Robotics · IoT</span>
-        <div class="project-title">Autonomous Robotics & IoT System</div>
-        <p class="project-desc">Developed robotics solutions integrating sensors and microcontrollers with real-time monitoring. Implemented obstacle detection, automated decision-making, and data analytics for operational monitoring.</p>
-        <div class="tech-chips">
-          <span class="chip">Python</span><span class="chip">Arduino/ESP32</span><span class="chip">IoT</span><span class="chip">Embedded Systems</span>
         </div>
       </div>
 
@@ -676,39 +846,58 @@
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-group reveal">
-        <div class="skill-group-title">Programming</div>
+        <div class="skill-group-title">Languages</div>
         <div class="skill-list">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span><span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span>
+          <span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">Machine Learning & AI</div>
+        <div class="skill-group-title">AI / ML & Deep Learning</div>
         <div class="skill-list">
-          <span class="skill-tag">scikit-learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Generative AI</span><span class="skill-tag">LLM Applications</span>
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">YOLOv8</span>
+          <span class="skill-tag">DistilBERT</span><span class="skill-tag">MedGemma</span><span class="skill-tag">ONNX Runtime</span>
+          <span class="skill-tag">SHAP / XAI</span><span class="skill-tag">Generative AI</span><span class="skill-tag">LLM Applications</span>
+          <span class="skill-tag">Prompt Engineering</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">Web & APIs</div>
         <div class="skill-list">
-          <span class="skill-tag">Flask</span><span class="skill-tag">Streamlit</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">jQuery</span>
+          <span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Streamlit</span><span class="skill-tag">REST APIs</span><span class="skill-tag">WebSockets</span>
+          <span class="skill-tag">Bootstrap</span><span class="skill-tag">jQuery / AJAX</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">Databases</div>
         <div class="skill-list">
-          <span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span>
+          <span class="skill-tag">MySQL (Prepared Stmts)</span><span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span><span class="skill-tag">SQLite</span><span class="skill-tag">Neo4j</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">Computer Vision & OCR</div>
+        <div class="skill-group-title">Cloud, DevOps & Streaming</div>
         <div class="skill-list">
-          <span class="skill-tag">OpenCV</span><span class="skill-tag">Tesseract OCR</span><span class="skill-tag">Image Processing</span>
+          <span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">Docker Compose</span><span class="skill-tag">Kafka</span><span class="skill-tag">Heroku</span>
+          <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span>
         </div>
       </div>
       <div class="skill-group reveal">
-        <div class="skill-group-title">Cloud & Tools</div>
+        <div class="skill-group-title">Data & Visualisation</div>
         <div class="skill-list">
-          <span class="skill-tag">AWS EC2</span><span class="skill-tag">AWS S3</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Tableau</span><span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">EDA</span>
+          <span class="skill-tag">Feature Engineering</span><span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Computer Vision & Specialised</div>
+        <div class="skill-list">
+          <span class="skill-tag">OpenCV</span><span class="skill-tag">Tesseract OCR</span><span class="skill-tag">AnyLabeling</span>
+          <span class="skill-tag">Chrome Extension (MV3)</span><span class="skill-tag">Android (ONNX)</span>
+          <span class="skill-tag">MITRE ATT&CK</span><span class="skill-tag">Graph Neural Networks</span>
         </div>
       </div>
     </div>
@@ -730,6 +919,20 @@
       <div class="reveal" style="transition-delay:0.1s">
         <ul class="cert-list">
           <li class="cert-item">
+            <div class="cert-icon gold">IIT</div>
+            <div>
+              <div class="cert-name">Advanced C++ Certification</div>
+              <div class="cert-org">IIT Bombay</div>
+            </div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-icon gold">INF</div>
+            <div>
+              <div class="cert-name">SQL Certification</div>
+              <div class="cert-org">Infosys Springboard</div>
+            </div>
+          </li>
+          <li class="cert-item">
             <div class="cert-icon">DE</div>
             <div>
               <div class="cert-name">Data Analytics Virtual Experience</div>
@@ -746,11 +949,50 @@
           <li class="cert-item">
             <div class="cert-icon">CA</div>
             <div>
-              <div class="cert-name">Machine Learning Internship</div>
+              <div class="cert-name">Machine Learning Internship Certificate</div>
               <div class="cert-org">CodeAlpha</div>
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="padding:0">
+  <div style="background:var(--navy); padding:70px 4rem;">
+    <div class="achievements-inner">
+      <div class="section-label" style="color:var(--sky)">Recognition</div>
+      <h2 class="section-title" style="color:white; margin-bottom:2rem;">Achievements</h2>
+      <div class="achieve-grid">
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <div class="achieve-title">🥇 1st Place – National Hackathon</div>
+            <div class="achieve-sub">Chakravyuha 1.0 · AI/ML Domain · Sri Sairam Institute of Technology · March 2026</div>
+          </div>
+        </div>
+        <div class="achieve-card reveal" style="transition-delay:0.08s">
+          <div class="achieve-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div>
+            <div class="achieve-title">Shortlisted – IOB CyberNova Hackathon</div>
+            <div class="achieve-sub">Indian Overseas Bank · MuleCatch AML system</div>
+          </div>
+        </div>
+        <div class="achieve-card reveal" style="transition-delay:0.16s">
+          <div class="achieve-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div>
+            <div class="achieve-title">Published · IJSREM June 2025</div>
+            <div class="achieve-sub">XAI-driven browser security · ISSN 2582-3930 · Vol 09, Issue 06</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -761,10 +1003,10 @@
   <div class="section-inner">
     <div class="section-label">Let's Connect</div>
     <h2 class="section-title" style="color:white; margin-bottom:0.75rem;">Get in Touch</h2>
-    <p class="contact-subtitle">Open to AI/ML, data science, full-stack Python, and aviation technology roles. Let's build something great together.</p>
+    <p class="contact-subtitle">Open to AI/ML, data science, full-stack Python/web, and aviation technology roles. Let's build something great together.</p>
     <div class="contact-links">
       <a href="mailto:ashiqueali90030@gmail.com" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" rx="2"/><path d="m4 8 8 5 8-5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 8 10 5 10-5"/></svg>
         ashiqueali90030@gmail.com
       </a>
       <a href="https://linkedin.com/in/mohammed-ashique-ali-a-029bb2271/" target="_blank" class="contact-link">
@@ -774,6 +1016,10 @@
       <a href="https://github.com/Ashique-Ali18" target="_blank" class="contact-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         GitHub
+      </a>
+      <a href="https://ashique-ali18.github.io" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Portfolio Site
       </a>
       <a href="tel:+917338886515" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.34h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
@@ -790,7 +1036,7 @@
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
